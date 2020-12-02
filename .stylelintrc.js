@@ -9,5 +9,5 @@ module.exports = {
     'no-descending-specificity': null,
     'no-invalid-double-slash-comments': null,
   },
-  ignoreFiles: ['node_modules/**/*', 'build/**/*'],
+  ignoreFiles: ['node_modules/**/*'],
 };

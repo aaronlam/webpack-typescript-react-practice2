@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    "target": "es5", // 编译成哪个版本的ES
+    "module": "ESNext", // 指定生成哪个模块系统的代码
+    "lib": ["dom", "dom.iterable", "esnext"], // 编译过程中需要引入的库文件列表
+    "allowJs": true, // 允许编译js文件
+    "jsx": "react", // 在.tsx代码文件里支持jsx
+    "isolatedModules": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true, // 启用所有严格类型检查选项
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // 指定模块解析策略
+    "baseUrl": "./", // 根路径
+    "paths": {
+      "Src/*": ["src/*"],
+      "Components/*": ["src/components/*"],
+      "Utils/*": ["src/utils/*"]
+    }, // 路径解析
+    "esModuleInterop": true, // 支持CommonJS和ES模块之间的互操作性
+
+    /* Experimental Options */
+    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "emitDecoratorMetadata": true, // 给源码里的装饰器声明加上设计类型元数据
+
+    /* Advanced Options */
+    "skipLibCheck": true, // 忽略所有的声明文件（*.d.ts）的类型检查
+    "forceConsistentCasingInFileNames": true // 禁止对同一个文件的不一致的引用
+  },
+  "exclude": ["node_modules"]
+}

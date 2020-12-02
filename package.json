@@ -1,9 +1,12 @@
 {
   "name": "webpack-typescript-react-practice2",
   "version": "1.0.0",
-  "description": "Quickly create react + typescript project development environment",
+  "description": "Quickly create react and typescript project development environment",
   "main": "index.js",
   "scripts": {
+    "build-analyzer": "cross-env NODE_ENV=production npm_config_report=true webpack --config ./scripts/config/webpack.prod.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./scripts/config/webpack.prod.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "npm run lint-eslint && npm run lint-stylelint",
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src",
@@ -20,12 +23,18 @@
       "eslint -c .eslintrc.js"
     ],
     "*.{less,scss,css}": [
-      "stylelint --config .stylelint.js"
+      "stylelint --config .stylelintrc.js"
     ],
     "*.{ts,tsx,js,json,html,yml,less,scss,css,md}": [
       "prettier --write"
     ]
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ],
   "keywords": [
     "react-typescript-project"
   ],
@@ -40,14 +49,30 @@
   },
   "homepage": "https://github.com/aaronlam/webpack-typescript-react-practice2#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@hot-loader/react-dom": "^17.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
+    "autoprefixer": "^10.0.4",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "conventional-changelog-cli": "^2.1.1",
+    "copy-webpack-plugin": "^6.3.2",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.1",
     "eslint": "^7.14.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -55,15 +80,46 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^23.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.4",
+    "glob": "^7.1.6",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.1.0",
     "lint-staged": "^10.5.2",
+    "mini-css-extract-plugin": "^1.3.1",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.10",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^4.1.0",
+    "postcss-normalize": "^9.0.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.0",
+    "purgecss-webpack-plugin": "^3.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
     "stylelint-order": "^4.1.0",
-    "typescript": "^4.1.2"
+    "terser-webpack-plugin": "^4.2.3",
+    "typescript": "^4.1.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^4.2.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0",
+    "webpackbar": "^5.0.0-3"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.12.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0"
   }
 }
