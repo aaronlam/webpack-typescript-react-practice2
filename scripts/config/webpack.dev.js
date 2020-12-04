@@ -6,7 +6,7 @@ const proxySetting = require('../../src/setApiProxy');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'cheap-module-eval',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [new webpack.HotModuleReplacementPlugin()],
   resolve: {
     alias: {
