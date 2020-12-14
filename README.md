@@ -16,8 +16,21 @@
 
 ```shell
 git clone https://github.com/aaronlam/webpack-typescript-react-practice2.git
+# or use yarn
 npm install
 npm start
+```
+
+## 启动本地开发环境（自带 Hot Reload）
+
+```shell
+npm start
+```
+
+## 构建打包生产环境（自带压缩）
+
+```shell
+npm run build
 ```
 
 ## 其他
